@@ -34,6 +34,6 @@ class LoginController extends Controller
     }
     public function home()
     {
-        return veiw('home');
+      return view('auth.home');
     }
 }

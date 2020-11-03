@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\RegistrationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,11 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 // registration controller route
-Route::get('register',[RegistrationController::class,'register'])->name('register');
-Route::post('register',[RegistrationController::class,'store'])->name('register.store');
+Route::get('register','Auth\RegistrationController@register');
+Route::post('register','Auth\RegistrationController@store');
 // logincontroller controller route
-Route::get('login',[LoginController::class,'login'])->name('login');
-Route::post('login',[LoginController::class,'authenticate']);
-Route::get('logout',[LoginController::class,'logout'])->name('logout');
+Route::get('login','Auth\LoginController@login')->name('login');
+Route::post('login','Auth\LoginController@authenticate');
+Route::get('logout','Auth\LoginController@logout')->name('logout');
 
-Route::get('home',[LoginController::class,'home'])->name('home');
+Route::get('home','Auth\LoginController@home')->name('home');

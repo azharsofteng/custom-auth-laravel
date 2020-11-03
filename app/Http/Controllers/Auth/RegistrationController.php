@@ -13,7 +13,7 @@ class RegistrationController extends Controller
     {
         return view('auth.register');
     }
-    public function store(Reqest $request)
+    public function store(Request $request)
     {
         $request->validate([
             'name' => 'required|string|max:255',
