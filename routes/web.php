@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 // registration controller route
 Route::get('register','Auth\RegistrationController@register');
@@ -22,6 +22,6 @@ Route::post('register','Auth\RegistrationController@store');
 // logincontroller controller route
 Route::get('login','Auth\LoginController@login')->name('login');
 Route::post('login','Auth\LoginController@authenticate');
-Route::get('logout','Auth\LoginController@logout')->name('logout');
+Route::post('logout','Auth\LoginController@logout')->name('logout');
 
 Route::get('home','Auth\LoginController@home')->name('home');
